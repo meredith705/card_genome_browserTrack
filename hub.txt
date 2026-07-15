@@ -1,5 +1,5 @@
 hub svHub
-shortLabel Long-read SVs
-longLabel Long-read Structural Variants (colored by SVTYPE, AF in mouseover)
+shortLabel NIH CARD Long-read SVs
+longLabel NIH CARD Long-read Structural Variants (colored by SVTYPE, AF in mouseover)
 genomesFile genomes.txt
 email melissa@datatecnica.com
