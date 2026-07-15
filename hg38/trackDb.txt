@@ -1,0 +1,8 @@
+track longReadSVs
+bigDataUrl longReadSVs.bb
+shortLabel Long-read SVs
+longLabel Long-read structural variants colored by type (DEL=red, DUP=green, INV=purple, INS=orange, BND=grey); AF shown on click
+type bigBed 9 +
+itemRgb on
+visibility pack
+maxItems 100000

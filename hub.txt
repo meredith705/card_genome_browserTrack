@@ -1,0 +1,5 @@
+hub svHub
+shortLabel Long-read SVs
+longLabel Long-read Structural Variants (colored by SVTYPE, AF in mouseover)
+genomesFile genomes.txt
+email you@example.com
