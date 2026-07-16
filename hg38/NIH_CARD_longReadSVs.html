@@ -1,0 +1,90 @@
+<h2>Description</h2>
+<p>
+This track displays structural variants (SVs) from long-read ONT 
+sequencing data produced at the NIH Center for Alzheimer's 
+and Related Dementias (NIH CARD) Long-Read Innitiative. SVs are genomic rearrangements larger
+than ~50 bp, including deletions, insertions, duplications, inversions,
+and complex substitutions. 
+</p>
+<p>
+These SVs are called against GRCh38 from Oxford Nanopore long-read DNA sequencing of prefrontal 
+cortex brain tissue samples produces at the NIH CARD Long-Read Innitiative. 
+This track includes 206 samples of European Ancestry from a North American Brain Expression Consortium study (NABEC, dbGaP:phs001300) 
+and 146 samples of African American Ancestry from the DIRP NIMH Human Brain Collection Core (HBCC:phs000979).
+
+</p>
+
+<h2>Display Conventions and Configuration</h2>
+<p>
+Items are colored by SV type:
+</p>
+<ul>
+<li><b><span style="color:rgb(217,95,2)">DEL</span></b> &mdash; deletion</li>
+<li><b><span style="color:rgb(27,158,119)">DUP</span></b> &mdash; duplication</li>
+<li><b><span style="color:rgb(117,112,179)">INV</span></b> &mdash; inversion</li>
+<li><b><span style="color:rgb(230,171,2)">INS</span></b> &mdash; insertion (shown as a 1 bp feature at the insertion point)</li>
+<li><b><span style="color:rgb(102,102,102)">BND</span></b> &mdash; breakend / translocation</li>
+</ul>
+<p>
+The item name is <code>SVTYPE-SVLEN</code> (e.g. <code>DEL-1200</code>).
+Clicking an item shows its details, including:
+</p>
+<ul>
+<li><b>svType</b> / <b>svLen</b> &mdash; structural variant type and length, from the source VCF INFO fields</li>
+<li><b>alleleFreq</b> &mdash; allele frequency, from the source VCF INFO/AF field</li>
+<li><b>carrierCount</b> &mdash; number of samples with a non-reference, non-missing genotype for this variant</li>
+<li><b>nabecCount</b> / <b>hbccCount</b> &mdash; carrier counts restricted to samples whose ID starts with <code>NABEC</code> or <code>HBCC</code>, respectively</li>
+</ul>
+
+<h2>Methods</h2>
+<p>
+NABEC samples were sequenced with ONT R9.4.1 and HBCC samples were sequnced with R10.4.1 PromethION flow cells with median N50 of 27 Kbp and at an average depth of ∼40x genome coverage. 
+SVs were called from minimap2 read alignments with Sniffles2 v.2.3 as well as with assembly alignments using Hapdiff. Assemblies were
+produced by Shasta v0.11.1 and phased using HapDup v.0.12. Assembly SVs were then merged across samples with Truvari while read SVs were merged 
+aross samples with Sniffles2, finally Truvari was again used to merge the read and assembly SVs together as well as across the 
+2 cohorts. All of these data were produced on AnVIL Terra using Nanopore Analysis Pipeline (NAPU) workflows which can be found <a href="https://dockstore.org/organizations/NIHCARD" target="_blank">here</a>, 
+also see this <a href="https://www.nature.com/articles/s41592-023-01993-x" target="_blank">publication</a>  for more information about the NAPU workflow.
+SVs were then converted to bigBed for display with a custom pipeline
+(<a href="https://github.com/meredith705/card_genome_browserTrack" target="_blank">source scripts</a>).
+</p>
+
+<h2>Data Access</h2>
+<p>
+The bigBed file underlying this track can be downloaded directly from the
+hub's GitHub repository, or queried by region with the UCSC
+<a href="https://genome.ucsc.edu/goldenPath/help/api.html" target="_blank">REST API</a>
+or command-line <code>bigBedToBed</code> utility. The calls in VCF format is available on 
+AnVIL for controlled access through dgGaP: NABEC:phs001300.v6.p1 (sub study phsID: phs003181.v2.p1) and HBCC:phs000979.v4.p2.
+</p>
+
+<h2>Credits</h2>
+<p>
+We thank members of the North American Brain Expression Consortium (NABEC) for providing samples derived from brain tissue. 
+We are grateful to the Banner Sun Health Research Institute Brain and Body Donation Program of Sun City, Arizona for the 
+provision of human biological materials.  This work was supported in part by the Intramural Research Program (IRP) of the 
+National Cancer Institute (NCI), the National Human Genome Research Institute (NHGRI, ZIAHG200398), National Institute on Aging 
+(NIA, ZIAAG000534, ZIAAG000538), and the Center for Alzheimer’s and Related Dementias (CARD), within the Intramural Research 
+Program of the NIA and the National Institute of Neurological Disorders and Stroke (NINDS). 
+The HBCC cohort is funded by the National Institute of Mental Health (NIMH)-IRP (ZIC MH002903). 
+We and collaboraters were supported in part by NIH grants DP5OD033357, R01HG010485, U24HG010262, U24HG011853, OT3HL142481, U01HG010961, 
+and OT2OD033761, T32HG012344. We acknowledge the support of Oxford Nanopore Technologies staff in generating this data set, in particular 
+A. Markham and J. Anderson. We also acknowledge the support of the PacBio team in generating the wet-lab protocol, in particular 
+K. Liu, J. Burke, M. Kim & D. Kilburn. This work utilized the computational resources of the NIH STRIDES Initiative 
+(https://cloud.nih.gov) through the Other Transaction agreement - Azure: OT2OD032100, Google Cloud Platform: OT2OD027060, 
+Amazon Web Services: OT2OD027852. This work utilized the computational resources of the NIH HPC Biowulf cluster (https://hpc.nih.gov). 
+Some authors’ participation in this project was part of a competitive contract awarded to DataTecnica LLC by the NIH to support 
+open science research. This research was supported in part by the IRP of the NIH. The contributions of the NIH authors are considered 
+Works of the United States Government. The findings and conclusions presented in this project are those of the authors and do not 
+necessarily reflect the views of the NIH or the U.S. Department of Health and Human Services.
+</p>
+
+<h2>References</h2>
+<p>
+K. J. Billingsley <em> et al. <em> <a href="https://www.biorxiv.org/content/10.1101/2024.12.16.628723v1.full" target="_blank">Long-read sequencing of hundreds of diverse brains provides insight into the impact of structural variation on 
+gene expression and DNA methylation</a>, bioRxiv (2024)p. 2024.12.16.628723.
+<p>
+Kolmogorov, M. <em> et al. <em>  <a href="https://www.nature.com/articles/s41592-023-01993-x" target="_blank">Scalable Nanopore sequencing of human genomes provides a comprehensive view of haplotype-resolved variation and 
+methylation</a>. Nat. Methods 20, 1483–1492 (2023).
+
+
+<p>

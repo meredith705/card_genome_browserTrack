@@ -1,8 +1,9 @@
-track longReadSVs
-bigDataUrl longReadSVs.bb
-shortLabel Long-read SVs
-longLabel Long-read structural variants colored by type (DEL=red, DUP=green, INV=purple, INS=orange, BND=grey); AF shown on click
+track NIH_CARD_longReadSVs
+bigDataUrl NIH_CARD_longReadSVs.bb
+shortLabel SVs from the NIH CARD Long-read SV catalogue
+longLabel NIH Center for Alzheimer's and Related Dementias Long-read Structural Variants (205 European Ancestry Samples 146 African American Ancestry Samples)
 type bigBed 9 +
 itemRgb on
 visibility pack
 maxItems 100000
+html NIH_CARD_longReadSVs

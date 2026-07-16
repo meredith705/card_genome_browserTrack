@@ -1,5 +1,5 @@
 hub svHub
-shortLabel NIH CARD Long-read SVs
-longLabel NIH CARD Long-read Structural Variants (colored by SVTYPE, AF in mouseover)
+shortLabel SVs from the NIH CARD Long-read SV catalogue
+longLabel NIH Center for Alzheimer's and Related Dementias Long-read Structural Variants (205 European Ancestry Samples 146 African American Ancestry Samples)
 genomesFile genomes.txt
 email melissa@datatecnica.com
