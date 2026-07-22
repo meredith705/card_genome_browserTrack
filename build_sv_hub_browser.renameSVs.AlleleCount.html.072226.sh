@@ -10,6 +10,11 @@
 #   bcftools, bedtools (optional), UCSC tools: bedToBigBed, fetchChromSizes
 #
 #   conda install -c bioconda bcftools ucsc-bedtobigbed ucsc-fetchchromsizes
+###     OR
+#   wget http://hgdownload.gi.ucsc.edu/admin/exe/linux.x86_64/bedToBigBed
+#   wget https://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/fetchChromSizes
+#   chmod a+x bedToBigBed
+#   chmod a+x fetchChromSizes
 #
 # Usage:
 #   ./build_sv_hub.sh your_svs.vcf.gz my_sv_hub/
