@@ -2,14 +2,14 @@
 <p>
 This track displays structural variants (SVs) from long-read ONT 
 sequencing data produced at the NIH Center for Alzheimer's 
-and Related Dementias (NIH CARD) Long-Read Innitiative. SVs are genomic rearrangements larger
+and Related Dementias (NIH CARD) Long-Read Initiative. SVs are genomic rearrangements larger
 than ~50 bp, including deletions, insertions, duplications, inversions,
 and complex substitutions. 
 </p>
 <p>
 These SVs are called against GRCh38 from Oxford Nanopore long-read DNA sequencing of prefrontal 
-cortex brain tissue samples produces at the NIH CARD Long-Read Innitiative. 
-This track includes 206 samples of European Ancestry from a North American Brain Expression Consortium study (NABEC, dbGaP:phs001300) 
+cortex brain tissue samples produced at the NIH CARD Long-Read Innitiative. 
+This track includes 206 samples of European Ancestry from the North American Brain Expression Consortium study (NABEC, dbGaP:phs001300) 
 and 146 samples of African American Ancestry from the DIRP NIMH Human Brain Collection Core (HBCC:phs000979).
 
 </p>
@@ -39,10 +39,9 @@ Clicking an item shows its details, including:
 <h2>Methods</h2>
 <p>
 NABEC samples were sequenced with ONT R9.4.1 and HBCC samples were sequnced with R10.4.1 PromethION flow cells with median N50 of 27 Kbp and at an average depth of ∼40x genome coverage. 
-SVs were called from minimap2 read alignments with Sniffles2 v.2.3 as well as with assembly alignments using Hapdiff. Assemblies were
+SVs were called from minimap2 read alignments with Sniffles2 v.2.3 as well as from assembly alignments using Hapdiff. Assemblies were
 produced by Shasta v0.11.1 and phased using HapDup v.0.12. Assembly SVs were then merged across samples with Truvari while read SVs were merged 
-aross samples with Sniffles2, finally Truvari was again used to merge the read and assembly SVs together as well as across the 
-2 cohorts. All of these data were produced on AnVIL Terra using Nanopore Analysis Pipeline (NAPU) workflows which can be found <a href="https://dockstore.org/organizations/NIHCARD" target="_blank">here</a>, 
+across samples with Sniffles2, finally Truvari was again used to merge the read and assembly SVs together as well as across the 2 cohorts. All of these data were produced on AnVIL Terra using the Nanopore Analysis Pipeline (NAPU) workflows which can be found <a href="https://dockstore.org/organizations/NIHCARD" target="_blank">here</a>, 
 also see this <a href="https://www.nature.com/articles/s41592-023-01993-x" target="_blank">publication</a>  for more information about the NAPU workflow.
 SVs were then converted to bigBed for display with a custom pipeline
 (<a href="https://github.com/meredith705/card_genome_browserTrack" target="_blank">source scripts</a>).
@@ -54,7 +53,7 @@ The bigBed file underlying this track can be downloaded directly from the
 hub's GitHub repository, or queried by region with the UCSC
 <a href="https://genome.ucsc.edu/goldenPath/help/api.html" target="_blank">REST API</a>
 or command-line <code>bigBedToBed</code> utility. The calls in VCF format is available on 
-AnVIL for controlled access through dgGaP: NABEC:phs001300.v6.p1 (sub study phsID: phs003181.v2.p1) and HBCC:phs000979.v4.p2.
+AnVIL for controlled access through dgGaP: NABEC:phs001300.v6.p1 (sub study phsID: phs003181.v2.p1) and HBCC:phs000979.v4.p2. Data can be accessed through the Anvil Data Explorer: (<a href="https://explore.anvilproject.org/datasets/0b740f36-28d6-4e02-8165-ad0e9674bbf6" target="_blank">NABEC</a>)  and  (<a href="https://explore.anvilproject.org/datasets/a4e936d1-d81a-475d-95be-b5cd41de921d" target="_blank">HBCC</a>). 
 </p>
 
 <h2>Credits</h2>
@@ -80,10 +79,10 @@ necessarily reflect the views of the NIH or the U.S. Department of Health and Hu
 
 <h2>References</h2>
 <p>
-K. J. Billingsley <em> et al. <em> <a href="https://www.biorxiv.org/content/10.1101/2024.12.16.628723v1.full" target="_blank">Long-read sequencing of hundreds of diverse brains provides insight into the impact of structural variation on 
+K. J. Billingsley et al. <a href="https://www.biorxiv.org/content/10.1101/2024.12.16.628723v1.full" target="_blank">Long-read sequencing of hundreds of diverse brains provides insight into the impact of structural variation on 
 gene expression and DNA methylation</a>, bioRxiv (2024)p. 2024.12.16.628723.
 <p>
-Kolmogorov, M. <em> et al. <em>  <a href="https://www.nature.com/articles/s41592-023-01993-x" target="_blank">Scalable Nanopore sequencing of human genomes provides a comprehensive view of haplotype-resolved variation and 
+Kolmogorov, M. et al. <a href="https://www.nature.com/articles/s41592-023-01993-x" target="_blank">Scalable Nanopore sequencing of human genomes provides a comprehensive view of haplotype-resolved variation and 
 methylation</a>. Nat. Methods 20, 1483–1492 (2023).
 
 
